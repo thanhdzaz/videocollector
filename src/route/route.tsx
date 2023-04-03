@@ -59,7 +59,7 @@ export const appRouters: any = [
 ];
 
 let routersAndChild = appRouters;
-appRouters.map((route: any) =>
+appRouters.forEach((route: any) =>
 {
     if (route.children?.length > 0)
     {
