@@ -16,34 +16,49 @@ export const Home = () => {
 
 
 
-    const [photos, setPhotos] = useState<{ id: string, src: string, name: string }[]>([])
+    const [photos, setPhotos] = useState<{ id: string, src: string, type: string, name: string }[]>([])
     return (
         <div className="App">
             <div className="brick-container"
                 style={{
                     display: 'grid',
-                    gridTemplateColumns: '1fr 1fr 1fr 1fr',
+                    gridTemplateColumns: '200px 200px 200px 200px',
                     gap: 20,
                     padding: 20,
                 }}
             >
                 {
-                    photos?.map((photo) => (
-                        <div>
-                            <img style={{
-                                objectFit: 'cover',
-                                width: '30%',
-                                cursor: 'pointer',
-                                // height: 400,
-                            }} src={photo.src} alt={photo.name}
-                                onClick={() => {
-                                    navigate(`/view/${photo.id}`)
-                                }}
-                            />
-                        </div>
-                    ))
+                    photos?.map((photo) => {
+
+
+
+                        return (
+                            <div style={{
+                                overflow: 'hidden'
+                            }}>
+                                {
+                                    photo.type === 'videos' ? (<video onClick={() => {
+                                        navigate(`/view/${photo.id}`)
+                                    }} src={photo.src} controls={false} width={200} height={200} />) : (<img style={{
+                                        objectFit: 'cover',
+                                        width: 200,
+                                        height: 200,
+                                        cursor: 'pointer',
+                                        // height: 400,
+                                    }} src={photo.src} alt={photo.id}
+                                        onClick={() => {
+                                            navigate(`/view/${photo.id}`)
+                                        }}
+                                    />)
+                                }
+
+                                <div>{photo.name}</div>
+                            </div>
+                        )
+                    })
                 }
             </div>
         </div >
     )
 }
+
