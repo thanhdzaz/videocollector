@@ -35,7 +35,7 @@ export const Home = () => {
                                 width: '30%',
                                 cursor: 'pointer',
                                 // height: 400,
-                            }} src={photo.src} alt={photo.id}
+                            }} src={photo.src} alt={photo.name}
                                 onClick={() => {
                                     navigate(`/view/${photo.id}`)
                                 }}
