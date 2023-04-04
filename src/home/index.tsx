@@ -16,7 +16,7 @@ export const Home = () => {
 
 
 
-    const [photos, setPhotos] = useState<{ id: string, src: string }[]>([])
+    const [photos, setPhotos] = useState<{ id: string, src: string, name: string }[]>([])
     return (
         <div className="App">
             <div className="brick-container"
