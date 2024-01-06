@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { firestore, storage } from "../firebase";
 
@@ -10,7 +10,7 @@ export const Upload = () => {
     function handleUpload() {
         const type = fileUpload.type.includes('image') ? 'photos' : 'videos';
         storage.upload(`${type}/${new Date().getTime()}-${fileUpload.name}`, fileUpload).then((fileSrc) => {
-            firestore.add('data', { name, src: fileSrc, type }).then(({ id }) => {
+            firestore.add('data', { name, src: fileSrc, type, createdDate: new Date().getTime() }).then(({ id }) => {
                 navigate(`/view/${id}`);
             })
         })

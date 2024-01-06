@@ -1,18 +1,27 @@
 import { getAnalytics } from 'firebase/analytics';
 import { FirebaseApp, initializeApp } from 'firebase/app';
-import { FirebaseStorage, getStorage, ref, StorageReference, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { addDoc, collection, deleteDoc, doc, Firestore, getDoc, getDocs, getFirestore, setDoc, updateDoc } from 'firebase/firestore/lite';
+import { Firestore, addDoc, collection, deleteDoc, doc, getDoc, getDocs, getFirestore, setDoc, updateDoc } from 'firebase/firestore/lite';
+import { FirebaseStorage, StorageReference, getDownloadURL, getStorage, ref, uploadBytes, } from 'firebase/storage';
 
 import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
 
+// const firebaseConfig = {
+//   apiKey: 'AIzaSyA_cWBOSYsklCHpKbeW4ZZC58ft1SHPkbs',
+//   authDomain: 'videocollector-0000.firebaseapp.com',
+//   projectId: 'videocollector-0000',
+//   storageBucket: 'videocollector-0000.appspot.com',
+//   messagingSenderId: '42551320152',
+//   appId: '1:42551320152:web:b964482944908c5c7a742d',
+//   measurementId: 'G-17TW22FZCY'
+// };
+
 const firebaseConfig = {
-  apiKey: 'AIzaSyA_cWBOSYsklCHpKbeW4ZZC58ft1SHPkbs',
-  authDomain: 'videocollector-0000.firebaseapp.com',
-  projectId: 'videocollector-0000',
-  storageBucket: 'videocollector-0000.appspot.com',
-  messagingSenderId: '42551320152',
-  appId: '1:42551320152:web:b964482944908c5c7a742d',
-  measurementId: 'G-17TW22FZCY'
+  apiKey: "AIzaSyAP-d1SfKzOtEp1iW7CYNgfNB0QWTLeRmY",
+  authDomain: "media-holder.firebaseapp.com",
+  projectId: "media-holder",
+  storageBucket: "media-holder.appspot.com",
+  messagingSenderId: "3985243993",
+  appId: "1:3985243993:web:752e3e844100a3e6405648"
 };
 
 export const firebaseApp = (): FirebaseApp => {
