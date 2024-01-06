@@ -14,14 +14,6 @@ export const Home = () => {
         });
     }, []);
 
-    useEffect(() => {
-        const observer = new ResizeObserver(callback);
-    }, []);
-
-    const callback = () => {
-
-    }
-
     const navigate = useNavigate();
 
     const [photos, setPhotos] = useState<{ id: string, src: string, type: string, name: string, createdDate: number }[]>([]);
