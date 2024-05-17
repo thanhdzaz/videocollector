@@ -114,3 +114,15 @@ a:hover {
   object-fit: cover;
   width: 100%;
 }
+
+.full-screen-btn {
+    background-color: #04AA6D !important;
+    border-radius: 5px;
+    font-size: 17px;
+    outline: none;
+    border: none;
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 6px 18px;
+    margin-top: 12px;
+}
