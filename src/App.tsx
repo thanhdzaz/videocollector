@@ -5,6 +5,7 @@ import { getRouter } from './route/route';
 // define your grid at different breakpoints, mobile first (smallest to largest)
 
 import { faHome, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { ConfigProvider } from 'antd';
 
 function App() {
 
@@ -14,28 +15,30 @@ function App() {
   const location = useLocation()
   return (
     <div>
-      <Routes>
-        {getRouter()}
-      </Routes>
-      <div
-        className="floating-btn"
-        style={{
-          height:  40,
-        }}
-        onClick={() => {
-          // setMenu(!menu)
-          if (location.pathname.includes('/upload') || location.pathname.includes('/view')) {
-            navigate('/')
-          } else {
-            navigate('/upload')
-          }
-        }}
-      >
-        <button>
-          <FontAwesomeIcon icon={location.pathname.includes('/upload') || location.pathname.includes('/view') ? faHome : faPlus} color='white'></FontAwesomeIcon>
-          
-        </button>
-      </div>
+      <ConfigProvider>
+        <Routes>
+          {getRouter()}
+        </Routes>
+        <div
+          className="floating-btn"
+          style={{
+            height: 40,
+          }}
+          onClick={() => {
+            // setMenu(!menu)
+            if (location.pathname.includes('/upload') || location.pathname.includes('/view')) {
+              navigate('/')
+            } else {
+              navigate('/upload')
+            }
+          }}
+        >
+          <button>
+            <FontAwesomeIcon icon={location.pathname.includes('/upload') || location.pathname.includes('/view') ? faHome : faPlus} color='white'></FontAwesomeIcon>
+
+          </button>
+        </div>
+      </ConfigProvider>
     </div>
   );
 }
